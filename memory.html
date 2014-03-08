@@ -60,20 +60,22 @@
 		
 // start of submission //
 				var counter = 0;
-				
+				if (!localStorage.getItem("nameless"))	
+					alert("No saved data was detected.....");
+				else
+					alert("Name: " + localStorage.getItem("nameless") + "  Number of turns passed: " + localStorage.getItem("countervalue"));
 				A="position:absolute;";
 				W="width:99px;height:99px;";
-				
 				
 				function saveit()
 				{
 				var name;
 				name = prompt("What is your name: ");
 				localStorage.setItem("nameless",name);
-				 localStorage.setItem("lvale",0);
+				 localStorage.setItem("countervalue",counter);
 				 
 				}
-				
+
 				function C(e,c)
 					{
 						e.className="w "+c
@@ -145,6 +147,5 @@
 </div>
 <div style="clear:both"></div>
 <button onclick="saveit()" >Save</button>
-<p id="namething" >Name: </p>
 	</body>
 </html>
